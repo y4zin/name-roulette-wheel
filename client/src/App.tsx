@@ -7,11 +7,13 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/404" component={NotFound} />
+      <Route path={`${basePath}/`} component={Home} />
+      <Route path={`${basePath}/404`} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
   );

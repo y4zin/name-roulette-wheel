@@ -206,8 +206,8 @@ function vitePluginStorageProxy(): Plugin {
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
 
 export default defineConfig({
-  // A relative base makes the production build work from any GitHub repository URL.
-  base: "./",
+  // GitHub Pages publishes this site under the repository name, not the domain root.
+  base: "/name-roulette-wheel/",
   plugins,
   resolve: {
     alias: {
